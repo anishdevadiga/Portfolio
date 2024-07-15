@@ -52,10 +52,37 @@ class HeroWidget extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                   const SpacerHeightWidget(),
-                  // MyButton(
-                  //   size: size,
-                  //   text:"Hire Me",
-                  // ),
+                  const SpacerHeightWidget(),
+                  const SpacerHeightWidget(),
+
+                  Row(
+                    children: [
+                      Image.asset('assets/images/linkedin_new.png', width: 37, height: 37), // Replace with your actual image asset path
+                      SizedBox(width: size.width*0.0035), // Adjust spacing as needed
+                      Text(
+                        "Anish Sherigar",
+                        style: GoogleFonts.poppins(
+                          color: Colors.white, // Or any color you prefer
+                          fontSize: 18,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Image.asset('assets/images/github_final.png', width: 37, height: 37), // Replace with your actual image asset path
+                      SizedBox(width: size.width*0.0035), // Adjust spacing as needed
+                      Text(
+                        "Anish Sherigar",
+                        style: GoogleFonts.poppins(
+                          color: Colors.white, // Or any color you prefer
+                          fontSize: 18,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
