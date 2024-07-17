@@ -1,4 +1,3 @@
 class Role{
-  static const flutterText="Flutter Developer";
-  static const datascienceText="Machine learning and Data Science ";
+  static const role=["Flutter Developer ", "Machine learning Enthusiast" , "Data Science Enthusiast","UI/UX Designer"];
 }
