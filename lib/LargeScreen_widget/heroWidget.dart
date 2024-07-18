@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:anishportfoilio/core/colors.dart';
 import 'package:anishportfoilio/utils/custom_role_text.dart';
-import 'package:anishportfoilio/utils/urls.dart';
 import 'package:anishportfoilio/widgets/custom_section.dart';
 import 'package:anishportfoilio/widgets/spacer_height.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +44,7 @@ class _HeroWidgetState extends State<HeroWidget>
 
     _controller.forward();
 
-    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
       setState(() {
         _currentRoleIndex = (_currentRoleIndex + 1) % roles.length;
         _controller.reset();
@@ -105,7 +104,7 @@ class _HeroWidgetState extends State<HeroWidget>
                       );
                     },
                   ),
-                  SpacerHeightWidget(),
+                  const SpacerHeightWidget(),
                   Text(
                     "From India",
                     style: GoogleFonts.poppins(
@@ -123,8 +122,8 @@ class _HeroWidgetState extends State<HeroWidget>
                       MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
-                          onTap: () => _launchURL(
-                              Urls.linkedinUrl), // Replace with the actual LinkedIn URL
+                          onTap: () => _launchURL(Role
+                              .linkedinUrl), // Replace with the actual LinkedIn URL
                           child: Row(
                             children: [
                               Image.asset('assets/images/linkedin_new.png',
@@ -154,8 +153,8 @@ class _HeroWidgetState extends State<HeroWidget>
                       MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
-                          onTap: () => _launchURL(
-                              Urls.githubUrl), // Replace with the actual GitHub URL
+                          onTap: () => _launchURL(Role
+                              .githubUrl), // Replace with the actual GitHub URL
                           child: Row(
                             children: [
                               Image.asset('assets/images/github_final.png',
@@ -190,7 +189,7 @@ class _HeroWidgetState extends State<HeroWidget>
               child: Container(
                 height: widget.size.height * 0.5,
                 width: widget.size.width * 0.5,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: WebColor.btnColor,
                   image: DecorationImage(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SkillImageWidget extends StatelessWidget {
   final String imagePath;
@@ -8,12 +9,12 @@ class SkillImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8.0),
-      height: 100,
+     margin:const EdgeInsets.symmetric(horizontal: 8.0),
+      height:100,
       width: 100,
       decoration: BoxDecoration(
         color:Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(5),
         image: DecorationImage(
           image: AssetImage(imagePath),
           fit: BoxFit.cover, // Adjust as needed

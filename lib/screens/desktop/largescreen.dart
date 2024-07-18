@@ -45,7 +45,7 @@ class LargeScreenLayout extends StatelessWidget {
                   const SpacerHeightWidget(
                     height: 10,
                   ),
-                  const SkillWidget(),
+                   SkillWidget(),
                 ],
               ),
             )));
