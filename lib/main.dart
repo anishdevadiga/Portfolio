@@ -20,11 +20,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           scaffoldBackgroundColor: WebColor.primaryColor,
           textTheme: TextTheme(
-            bodySmall: GoogleFonts.poppins(color:Colors.white,fontSize: 20,fontWeight: FontWeight.normal),
-            bodyMedium: GoogleFonts.poppins(color:Colors.white,fontSize: 26,fontWeight: FontWeight.w700),
-            bodyLarge: GoogleFonts.poppins(color: Colors.white,fontSize: 32,fontWeight: FontWeight.w700),
-            titleSmall:GoogleFonts.poppins(color:Colors.white,fontSize: 20,fontWeight: FontWeight.normal),
-
+            bodySmall: GoogleFonts.amaranth(color:Colors.white,fontSize: 22,fontWeight: FontWeight.normal),
+            bodyMedium: GoogleFonts.amaranth(color:Colors.white,fontSize: 28,fontWeight: FontWeight.normal),
+            bodyLarge: GoogleFonts.amaranth(color: Colors.white,fontSize: 42,fontWeight: FontWeight.normal),
+            titleSmall:GoogleFonts.amaranth(color:Colors.white,fontSize: 21,fontWeight: FontWeight.normal),
+           titleMedium:GoogleFonts.amaranth(color:Colors.white,fontSize: 24,fontWeight: FontWeight.normal),
+            titleLarge:GoogleFonts.amaranth(color:Colors.white,fontSize: 38,fontWeight: FontWeight.normal),
           )
       ),
       debugShowCheckedModeBanner: false,

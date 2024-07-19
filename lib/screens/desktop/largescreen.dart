@@ -1,5 +1,6 @@
 import 'package:anishportfoilio/LargeScreen_widget/Educcation_widget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/aboutWidget.dart';
+import 'package:anishportfoilio/LargeScreen_widget/contact_widget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/heroWidget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/professionalexperience.dart';
 import 'package:anishportfoilio/LargeScreen_widget/skill_widget.dart';
@@ -33,19 +34,23 @@ class LargeScreenLayout extends StatelessWidget {
 
                   AboutWidget(size: size, themedata: themedata),
                   const SpacerHeightWidget(
-                    height: 10,
+                    height: 30,
                   ),
 
                   ProfessionalExperience(size: size, themedata: themedata),
                  const SpacerHeightWidget(
-                    height: 10,
+                    height: 30,
                   ),
 
                   EduccationWidget(size: size, themedata: themedata),
                   const SpacerHeightWidget(
-                    height: 10,
+                    height: 30,
                   ),
-                   SkillWidget(),
+                   SkillWidget(size: size),
+                  const SpacerHeightWidget(
+                    height: 30,
+                  ),
+                  ContactWidget(size : size,themeData: themedata,),
                 ],
               ),
             )));

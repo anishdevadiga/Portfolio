@@ -3,15 +3,15 @@ import 'package:get/get.dart';
 
 class SkillImageWidget extends StatelessWidget {
   final String imagePath;
-
-  const SkillImageWidget({Key? key, required this.imagePath}) : super(key: key);
+  final Size size;
+  const SkillImageWidget({Key? key, required this.imagePath,required this.size}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
      margin:const EdgeInsets.symmetric(horizontal: 8.0),
-      height:100,
-      width: 100,
+      height:size.height*0.1,
+      width: size.width*0.05,
       decoration: BoxDecoration(
         color:Colors.white,
         borderRadius: BorderRadius.circular(5),

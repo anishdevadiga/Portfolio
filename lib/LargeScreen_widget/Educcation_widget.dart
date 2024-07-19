@@ -3,6 +3,7 @@ import 'package:anishportfoilio/core/textstyle.dart';
 import 'package:anishportfoilio/widgets/custom_section.dart';
 import 'package:anishportfoilio/widgets/spacer_height.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class EduccationWidget extends StatelessWidget {
   const EduccationWidget({super.key, required this.size, required this.themedata});
@@ -31,6 +32,7 @@ class EduccationWidget extends StatelessWidget {
     {
       'institution': 'Manipal Institute of Technology, Manipal, Udupi',
       'degree': 'Master of Computer Application',
+      'score': 'CGPA - 7.56',
       'duration': 'August 2023 - Present'
     }
   ];
@@ -62,8 +64,11 @@ class EduccationWidget extends StatelessWidget {
                           color: WebColor.primaryColor,
                           child: ListTile(
                             leading: const Icon(Icons.school, color: WebColor.btnColor),
-                            title: Text(detail['institution']!, style: bodyStyle),
-                            subtitle: Text('${detail['degree']}\n${detail['score']}\n${detail['duration']}', style: bodyStyle),
+                            title: Text(detail['institution']!, style: GoogleFonts.amaranth(fontSize: 20,color: Colors.white)),
+                            subtitle: Text('${detail['degree']}\n${detail['score']}\n${detail['duration']}', style: GoogleFonts.amaranth(
+                              fontSize: 16,
+                              color: Colors.white
+                            )),
                           ),
                         ),
                       ),
@@ -86,8 +91,11 @@ class EduccationWidget extends StatelessWidget {
                           color: WebColor.primaryColor,
                           child: ListTile(
                             leading: const Icon(Icons.school, color: WebColor.btnColor),
-                            title: Text(detail['institution']!, style: bodyStyle),
-                            subtitle: Text('${detail['degree']}\n${detail['score']}\n${detail['duration']}', style: bodyStyle),
+                            title: Text(detail['institution']!, style: GoogleFonts.amaranth(fontSize: 20,color: Colors.white)),
+                            subtitle: Text('${detail['degree']}\n${detail['score']}\n${detail['duration']}', style: GoogleFonts.amaranth(
+                              fontSize: 16,
+                               color: Colors.white
+                              )),
                           ),
                         ),
                       ),

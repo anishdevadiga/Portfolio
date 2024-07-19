@@ -32,12 +32,12 @@ class HeaderWidget extends StatelessWidget {
           RichText(
               text: TextSpan(
                   text: "Anish ",
-                  style: themedata.textTheme.bodyMedium,
+                  style: themedata.textTheme.titleLarge,
                   children: [
                 TextSpan(
                     text: "Sherigar",
-                    style: GoogleFonts.poppins(
-                        fontSize: 26,
+                    style: GoogleFonts.amaranth(
+                        fontSize: 34,
                         color: WebColor.btnColor,
                         fontWeight: FontWeight.w700))
               ])),
@@ -53,7 +53,7 @@ class HeaderWidget extends StatelessWidget {
                     onTap: () {
                       // Navigate to About section
                     },
-                    child: Text('About', style: themedata.textTheme.titleSmall),
+                    child: Text('About', style: themedata.textTheme.titleMedium),
                   ),
                   const SpacerWidthWidget(),
                   GestureDetector(
@@ -61,7 +61,7 @@ class HeaderWidget extends StatelessWidget {
                       // Navigate to Skills section
                     },
                     child:
-                        Text('Skills', style: themedata.textTheme.titleSmall),
+                        Text('Skills', style: themedata.textTheme.titleMedium),
                   ),
                   const SpacerWidthWidget(),
                   GestureDetector(
@@ -69,7 +69,7 @@ class HeaderWidget extends StatelessWidget {
                       // Navigate to Projects section
                     },
                     child:
-                        Text('Projects', style: themedata.textTheme.titleSmall),
+                        Text('Projects', style: themedata.textTheme.titleMedium),
                   ),
                   const SpacerWidthWidget(),
                   GestureDetector(
@@ -77,14 +77,14 @@ class HeaderWidget extends StatelessWidget {
                       // Navigate to Contact section
                     },
                     child:
-                        Text('Contact', style: themedata.textTheme.titleSmall),
+                        Text('Contact', style: themedata.textTheme.titleMedium),
                   ),
                   const SpacerWidthWidget(),
                   GestureDetector(
                     onTap: _downloadResume,
                     child: Container(
-                        width: size.width * 0.05,
-                        height: size.width * 0.02,
+                        width: size.width * 0.07,
+                        height: size.width * 0.03,
                         alignment: Alignment.center,
                         padding: EdgeInsets.all(5.0),
                         decoration: BoxDecoration(
@@ -92,7 +92,7 @@ class HeaderWidget extends StatelessWidget {
                           color: WebColor.btnColor,
                         ),
                         child: Text('Resume',
-                            style: themedata.textTheme.titleSmall)),
+                            style: themedata.textTheme.titleMedium)),
                   ),
                 ],
               ),

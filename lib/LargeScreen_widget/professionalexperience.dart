@@ -2,6 +2,7 @@ import 'package:anishportfoilio/core/colors.dart';
 import 'package:anishportfoilio/core/textstyle.dart';
 import 'package:anishportfoilio/widgets/spacer_height.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/custom_section.dart';
 
@@ -34,8 +35,8 @@ class ProfessionalExperience extends StatelessWidget {
                         color: WebColor.primaryColor,
                         child: ListTile(
                           leading: const Icon(Icons.circle, color: WebColor.btnColor),
-                          title: Text(professionalExp1, style: bodyStyle),
-                          subtitle: Text("June 2024 - Present", style: bodyStyle),
+                          title: Text(professionalExp1, style: GoogleFonts.amaranth(fontSize: 20,color: Colors.white)),
+                          subtitle: Text("June 2024 - Present", style: GoogleFonts.amaranth(fontSize: 20,color: Colors.white)),
                         ),
                       ),
                     );

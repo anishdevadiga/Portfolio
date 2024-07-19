@@ -87,7 +87,7 @@ class _HeroWidgetState extends State<HeroWidget>
                 children: [
                   Text(
                     "Hello I am Anish",
-                    style: widget.themedata.textTheme.bodySmall,
+                    style: widget.themedata.textTheme.bodyMedium,
                     textAlign: TextAlign.left,
                   ),
                   AnimatedBuilder(
@@ -95,9 +95,9 @@ class _HeroWidgetState extends State<HeroWidget>
                     builder: (context, child) {
                       return Text(
                         roles[_currentRoleIndex].substring(0, _animation.value),
-                        style: GoogleFonts.poppins(
+                        style: GoogleFonts.amaranth(
                           color: WebColor.btnColor,
-                          fontSize: 60,
+                          fontSize: 68,
                           fontWeight: FontWeight.w700,
                         ),
                         textAlign: TextAlign.left,
@@ -107,10 +107,10 @@ class _HeroWidgetState extends State<HeroWidget>
                   const SpacerHeightWidget(),
                   Text(
                     "From India",
-                    style: GoogleFonts.poppins(
+                    style: GoogleFonts.amaranth(
                       color: Colors.white60,
                       fontWeight: FontWeight.normal,
-                      fontSize: 18,
+                      fontSize: 26,
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -127,18 +127,18 @@ class _HeroWidgetState extends State<HeroWidget>
                           child: Row(
                             children: [
                               Image.asset('assets/images/linkedin_new.png',
-                                  width: 37,
+                                  width: 44,
                                   height:
-                                      37), // Replace with your actual image asset path
+                                      44), // Replace with your actual image asset path
                               SizedBox(
                                   width: widget.size.width *
-                                      0.0035), // Adjust spacing as needed
+                                      0.0055), // Adjust spacing as needed
                               Text(
                                 "Anish Sherigar",
-                                style: GoogleFonts.poppins(
+                                style: GoogleFonts.amaranth(
                                   color:
                                       Colors.white, // Or any color you prefer
-                                  fontSize: 18,
+                                  fontSize: 24,
                                   fontWeight: FontWeight.w300,
                                 ),
                               ),
@@ -158,18 +158,18 @@ class _HeroWidgetState extends State<HeroWidget>
                           child: Row(
                             children: [
                               Image.asset('assets/images/github_final.png',
-                                  width: 37,
+                                  width: 44,
                                   height:
-                                      37), // Replace with your actual image asset path
+                                      44), // Replace with your actual image asset path
                               SizedBox(
                                   width: widget.size.width *
-                                      0.0035), // Adjust spacing as needed
+                                      0.0055), // Adjust spacing as needed
                               Text(
                                 "Anish Sherigar",
-                                style: GoogleFonts.poppins(
+                                style: GoogleFonts.amaranth(
                                   color:
                                       Colors.white, // Or any color you prefer
-                                  fontSize: 18,
+                                  fontSize: 24,
                                   fontWeight: FontWeight.w300,
                                 ),
                               ),
