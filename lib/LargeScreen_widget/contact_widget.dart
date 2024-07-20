@@ -47,30 +47,33 @@ class ContactWidget extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          const Center(
+                          Center(
                             child: TextField(
                               textAlign: TextAlign.start,
+                              style: GoogleFonts.amaranth(
+                                  fontSize: 22
+                              ),
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(
+                                border: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
+                                  BorderRadius.all(Radius.circular(10)),
                                   borderSide: BorderSide(
                                     color: Colors.white, // Border color
                                     width: 2.0, // Border width
                                   ),
                                 ),
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
+                                  BorderRadius.all(Radius.circular(20)),
                                   borderSide: BorderSide(
                                     color: Colors
                                         .white, // Border color when enabled
                                     width: 2.0, // Border width
                                   ),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
+                                  BorderRadius.all(Radius.circular(20)),
                                   borderSide: BorderSide(
                                     color: Colors
                                         .white, // Border color when focused
@@ -78,8 +81,9 @@ class ContactWidget extends StatelessWidget {
                                   ),
                                 ),
                                 hintText: 'Enter your name',
-                                hintStyle: TextStyle(
-                                  color: Colors.white70, // Hint text color
+                                hintStyle: GoogleFonts.amaranth(
+                                    fontSize: 18,
+                                    color: Colors.white70
                                 ),
                               ),
                             ),
@@ -89,30 +93,33 @@ class ContactWidget extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          const Center(
+                           Center(
                             child: TextField(
                               textAlign: TextAlign.start,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(
+                              style:GoogleFonts.amaranth(
+                                fontSize: 22
+                              ),
+                              decoration:  InputDecoration(
+                                border: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
+                                  BorderRadius.all(Radius.circular(10)),
                                   borderSide: BorderSide(
                                     color: Colors.white, // Border color
                                     width: 2.0, // Border width
                                   ),
                                 ),
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
+                                  BorderRadius.all(Radius.circular(20)),
                                   borderSide: BorderSide(
                                     color: Colors
                                         .white, // Border color when enabled
                                     width: 2.0, // Border width
                                   ),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
+                                  BorderRadius.all(Radius.circular(20)),
                                   borderSide: BorderSide(
                                     color: Colors
                                         .white, // Border color when focused
@@ -120,8 +127,9 @@ class ContactWidget extends StatelessWidget {
                                   ),
                                 ),
                                 hintText: 'Enter your email',
-                                hintStyle: TextStyle(
-                                  color: Colors.white70, // Hint text color
+                                hintStyle: GoogleFonts.amaranth(
+                                    fontSize: 18,
+                                    color: Colors.white70
                                 ),
                               ),
                             ),
@@ -132,31 +140,34 @@ class ContactWidget extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          const Center(
+                          Center(
                             child: TextField(
                               textAlign: TextAlign.start,
                               maxLines: 5,
+                              style:GoogleFonts.amaranth(
+                                  fontSize: 22
+                              ),
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(
+                                border: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
+                                  BorderRadius.all(Radius.circular(10)),
                                   borderSide: BorderSide(
                                     color: Colors.white, // Border color
                                     width: 2.0, // Border width
                                   ),
                                 ),
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
+                                  BorderRadius.all(Radius.circular(20)),
                                   borderSide: BorderSide(
                                     color: Colors
                                         .white, // Border color when enabled
                                     width: 2.0, // Border width
                                   ),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
+                                  BorderRadius.all(Radius.circular(20)),
                                   borderSide: BorderSide(
                                     color: Colors
                                         .white, // Border color when focused
@@ -164,8 +175,9 @@ class ContactWidget extends StatelessWidget {
                                   ),
                                 ),
                                 hintText: 'Enter the message',
-                                hintStyle: TextStyle(
-                                  color: Colors.white70, // Hint text color
+                                hintStyle: GoogleFonts.amaranth(
+                                    fontSize: 18,
+                                  color: Colors.white70
                                 ),
                               ),
                             ),
@@ -182,8 +194,8 @@ class ContactWidget extends StatelessWidget {
                                 style: ElevatedButton.styleFrom(
                                   foregroundColor: Colors.white,
                                   backgroundColor:
-                                      WebColor.btnColor, // Button text color
-                                  padding: EdgeInsets.symmetric(
+                                  WebColor.btnColor, // Button text color
+                                  padding: const EdgeInsets.symmetric(
                                       vertical: 16),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(

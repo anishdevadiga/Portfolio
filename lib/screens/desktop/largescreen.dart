@@ -46,11 +46,11 @@ class LargeScreenLayout extends StatelessWidget {
                   const SpacerHeightWidget(
                     height: 30,
                   ),
-                   SkillWidget(size: size),
+                  SkillWidget(size: size),
                   const SpacerHeightWidget(
                     height: 30,
                   ),
-                  ContactWidget(size : size,themeData: themedata,),
+                  ContactWidget(size : size,themeData: themedata),
                 ],
               ),
             )));

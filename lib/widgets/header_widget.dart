@@ -1,7 +1,9 @@
+import 'package:anishportfoilio/LargeScreen_widget/aboutWidget.dart';
 import 'package:anishportfoilio/utils/custom_role_text.dart';
 import 'package:anishportfoilio/widgets/custom_section.dart';
 import 'package:anishportfoilio/widgets/spacer_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -51,7 +53,6 @@ class HeaderWidget extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // Navigate to About section
                     },
                     child: Text('About', style: themedata.textTheme.titleMedium),
                   ),
