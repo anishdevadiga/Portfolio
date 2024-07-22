@@ -5,14 +5,18 @@ import 'package:anishportfoilio/LargeScreen_widget/heroWidget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/professionalexperience.dart';
 import 'package:anishportfoilio/LargeScreen_widget/skill_widget.dart';
 import 'package:anishportfoilio/widgets/custom_section.dart';
-
 import 'package:anishportfoilio/widgets/header_widget.dart';
 import 'package:anishportfoilio/widgets/spacer_height.dart';
 import 'package:flutter/material.dart';
 
-class LargeScreenLayout extends StatelessWidget {
+class LargeScreenLayout extends StatefulWidget {
   const LargeScreenLayout({super.key});
 
+  @override
+  State<LargeScreenLayout> createState() => _LargeScreenLayoutState();
+}
+
+class _LargeScreenLayoutState extends State<LargeScreenLayout> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -38,7 +42,7 @@ class LargeScreenLayout extends StatelessWidget {
                   ),
 
                   ProfessionalExperience(size: size, themedata: themedata),
-                 const SpacerHeightWidget(
+                  const SpacerHeightWidget(
                     height: 30,
                   ),
 
@@ -50,7 +54,7 @@ class LargeScreenLayout extends StatelessWidget {
                   const SpacerHeightWidget(
                     height: 30,
                   ),
-                  ContactWidget(size : size,themeData: themedata),
+                  ContactWidget(size: size, themeData: themedata),
                 ],
               ),
             )));

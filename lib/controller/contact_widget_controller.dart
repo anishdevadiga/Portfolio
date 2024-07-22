@@ -2,25 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ContactController extends GetxController {
-  final nameController = TextEditingController();
-  final emailController = TextEditingController();
-  final messageController = TextEditingController();
-
+  var nameController = TextEditingController();
   var nameValidationError = ''.obs;
-  var emailValidationError = ''.obs;
-  var messageValidationError = ''.obs;
 
-  String? validateName(String value) {
-    if (value.isEmpty || !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-      nameValidationError.value = 'Enter a valid name';
-      return 'Enter a valid name';
+  String validateName(String value) {
+    if (value.isEmpty) {
+      return 'Name cannot be empty';
+    } else if (value.length < 3) {
+      return 'Name must be at least 3 characters long';
     } else {
-      nameValidationError.value = '';
       return '';
     }
   }
 
-  String? validateEmail(String value) {
+  void onNameChanged(String value) {
+    nameValidationError.value = validateName(value);
+  }
+  final emailController = TextEditingController();
+  final messageController = TextEditingController();
+
+  var emailValidationError = ''.obs;
+  var messageValidationError = ''.obs;
+
+
+
+ String? validateEmail(String value) {
     if (value.isEmpty || !RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$').hasMatch(value)) {
       emailValidationError.value = 'Enter a valid email';
       return 'Enter a valid email';
@@ -30,7 +36,7 @@ class ContactController extends GetxController {
     }
   }
 
- String validateMessage(String value) {
+ String? validateMessage(String value) {
     if (value.length < 5 || value.startsWith(RegExp(r'^[\s.!@#\$&*~^]+'))) {
       messageValidationError.value = 'Enter a valid message';
       return 'Enter a valid message';
@@ -44,7 +50,4 @@ class ContactController extends GetxController {
     return nameValidationError.value.isEmpty && emailValidationError.value.isEmpty && messageValidationError.value.isEmpty;
   }
 
-  void submitForm() {
-
-  }
 }
