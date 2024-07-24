@@ -3,6 +3,7 @@ import 'package:anishportfoilio/LargeScreen_widget/aboutWidget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/contact_widget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/heroWidget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/professionalexperience.dart';
+import 'package:anishportfoilio/LargeScreen_widget/projectsWidget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/skill_widget.dart';
 import 'package:anishportfoilio/widgets/custom_section.dart';
 import 'package:anishportfoilio/widgets/header_widget.dart';
@@ -54,7 +55,14 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                   const SpacerHeightWidget(
                     height: 30,
                   ),
+                  Projectswidget(size: size, themedata: themedata),
+                  const SpacerHeightWidget(
+                    height: 30,
+                  ),
                   ContactWidget(size: size, themeData: themedata),
+
+
+
                 ],
               ),
             )));
