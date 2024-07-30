@@ -36,7 +36,7 @@ class CertficationWidget extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 12.0),
-            child: Text('Projects', style: themedata.textTheme.bodyLarge),
+            child: Text('Certifications ', style: themedata.textTheme.bodyLarge),
           ),
           SizedBox(
             height: size.height * 0.5, // Adjust the height as needed
