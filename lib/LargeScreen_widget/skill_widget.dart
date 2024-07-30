@@ -15,12 +15,14 @@ class SkillWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themedata = Theme.of(context);
     final List<String> imagePaths = [
+      'assets/images/c.png',
       'assets/images/c++.png',
       'assets/images/dart.png',
       'assets/images/java_new.png',
       'assets/images/python.png',
       'assets/images/canva.png',
       'assets/images/figma.png',
+      'assets/images/flutterflow.png',
       'assets/images/html.png',
       'assets/images/CSS.png',
       'assets/images/js.png',

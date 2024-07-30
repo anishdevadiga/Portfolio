@@ -1,5 +1,6 @@
 import 'package:anishportfoilio/LargeScreen_widget/Educcation_widget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/aboutWidget.dart';
+import 'package:anishportfoilio/LargeScreen_widget/certificationwidget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/contact_widget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/heroWidget.dart';
 import 'package:anishportfoilio/LargeScreen_widget/professionalexperience.dart';
@@ -56,6 +57,10 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                     height: 30,
                   ),
                   Projectswidget(size: size, themedata: themedata),
+                  const SpacerHeightWidget(
+                    height: 30,
+                  ),
+                  CertficationWidget(size: size, themedata: themedata),
                   const SpacerHeightWidget(
                     height: 30,
                   ),

@@ -4,8 +4,8 @@ import 'package:anishportfoilio/widgets/custom_section.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
-class Projectswidget extends StatelessWidget {
-  const Projectswidget({
+class CertficationWidget extends StatelessWidget {
+  const CertficationWidget({
     super.key,
     required this.size,
     required this.themedata,
@@ -77,20 +77,18 @@ class Projectswidget extends StatelessWidget {
                               color: WebColor.primaryColor,
                               child: Container(
                                 width: size.width * 0.2, // Adjust width as needed
-                                height: size.height * 0.5, // Adjust height as needed
+                                height: size.height * 0.4, // Adjust height as needed
                                 padding: const EdgeInsets.all(20),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Expanded(
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8.0), // Optional: for rounded corners
-                                        child: Image.asset(
-                                          projects[index]['image']!,
-                                          fit: BoxFit.cover,
-                                          width: size.width*0.5, // Make image take full width
-                                          height:  size.width*0.5, // Make image take full height
-                                        ),
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(8.0), // Optional: for rounded corners
+                                      child: Image.asset(
+                                        projects[index]['image']!,
+                                        fit: BoxFit.cover,
+                                        width: size.width * 0.18, // Adjust width for rectangle shape
+                                        height: size.height * 0.25, // Adjust height for rectangle shape
                                       ),
                                     ),
                                     Padding(

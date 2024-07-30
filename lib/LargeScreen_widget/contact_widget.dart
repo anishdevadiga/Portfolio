@@ -1,8 +1,11 @@
+import 'package:anishportfoilio/controller/contact_widget_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:anishportfoilio/core/colors.dart';
 import 'package:anishportfoilio/widgets/custom_section.dart';
 import 'package:anishportfoilio/widgets/spacer_height.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class ContactWidget extends StatefulWidget {
   final ThemeData themeData;
@@ -15,6 +18,8 @@ class ContactWidget extends StatefulWidget {
 }
 
 class _ContactWidgetState extends State<ContactWidget> {
+  final ContactController _contactController = Get.put(ContactController());
+
   @override
   Widget build(BuildContext context) {
     final themedata = Theme.of(context);
@@ -71,7 +76,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                                   child: Padding(
                                     padding: const EdgeInsets.only(left: 10),
                                     child: Center(
-                                      child: TextField(
+                                      child: Obx(() => TextField(
+                                        controller: _contactController.nameController,
+                                        onChanged: _contactController.onNameChanged,
                                         textAlign: TextAlign.start,
                                         style: GoogleFonts.amaranth(fontSize: 22),
                                         decoration: InputDecoration(
@@ -79,8 +86,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                                           hintStyle: GoogleFonts.amaranth(
                                               fontSize: 18, color: Colors.white70),
                                           border: InputBorder.none, // Remove default border
+                                          errorText: _contactController.nameValidationError.value.isEmpty ? null : _contactController.nameValidationError.value,
                                         ),
-                                      ),
+                                      )),
                                     ),
                                   ),
                                 ),
@@ -93,7 +101,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                               children: [
                                 Text("Email", style: themedata.textTheme.titleMedium),
                                 const SizedBox(height: 10),
-                                TextField(
+                                Obx(() => TextField(
+                                  controller: _contactController.emailController,
+                                  onChanged: _contactController.onEmailChanged,
                                   textAlign: TextAlign.start,
                                   style: GoogleFonts.amaranth(fontSize: 22),
                                   decoration: InputDecoration(
@@ -114,8 +124,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                                     hintText: 'Enter your email',
                                     hintStyle: GoogleFonts.amaranth(
                                         fontSize: 18, color: Colors.white70),
+                                    errorText: _contactController.emailValidationError.value.isEmpty ? null : _contactController.emailValidationError.value,
                                   ),
-                                ),
+                                )),
                               ],
                             ),
                             const SpacerHeightWidget(height: 20),
@@ -125,7 +136,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                               children: [
                                 Text("Message", style: themedata.textTheme.titleMedium),
                                 const SizedBox(height: 10),
-                                TextField(
+                                Obx(() => TextField(
+                                  controller: _contactController.messageController,
+                                  onChanged: _contactController.onMessageChanged,
                                   textAlign: TextAlign.start,
                                   maxLines: 5,
                                   style: GoogleFonts.amaranth(fontSize: 22),
@@ -147,8 +160,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                                     hintText: 'Enter the message',
                                     hintStyle: GoogleFonts.amaranth(
                                         fontSize: 18, color: Colors.white70),
+                                    errorText: _contactController.messageValidationError.value.isEmpty ? null : _contactController.messageValidationError.value,
                                   ),
-                                ),
+                                )),
                               ],
                             ),
                             const SpacerHeightWidget(height: 20),
@@ -157,9 +171,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                 width: widget.size.width * 0.25,
                                 height: widget.size.width * 0.03,
                                 child: ElevatedButton(
-                                  onPressed: () {
-                                    // Implement send action
-                                  },
+                                  onPressed: _contactController.sendMessage,
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
                                     backgroundColor: WebColor.btnColor, // Button text color
