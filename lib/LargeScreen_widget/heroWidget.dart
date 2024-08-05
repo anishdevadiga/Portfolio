@@ -86,7 +86,7 @@ class _HeroWidgetState extends State<HeroWidget>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Hello I am Anish",
+                    "Hi, Myself Anish ",
                     style: widget.themedata.textTheme.bodyMedium,
                     textAlign: TextAlign.left,
                   ),
@@ -94,7 +94,7 @@ class _HeroWidgetState extends State<HeroWidget>
                     animation: _animation,
                     builder: (context, child) {
                       return Text(
-                        roles[_currentRoleIndex].substring(0, _animation.value),
+                        "I'm a ${roles[_currentRoleIndex].substring(0, _animation.value)}",
                         style: GoogleFonts.amaranth(
                           color: WebColor.btnColor,
                           fontSize: 68,

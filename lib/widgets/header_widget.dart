@@ -1,19 +1,29 @@
-import 'package:anishportfoilio/LargeScreen_widget/aboutWidget.dart';
-import 'package:anishportfoilio/utils/custom_role_text.dart';
-import 'package:anishportfoilio/widgets/custom_section.dart';
-import 'package:anishportfoilio/widgets/spacer_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/colors.dart';
+import '../widgets/custom_section.dart';
+import '../widgets/spacer_widget.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({super.key});
+  final ScrollController scrollController;
+  final GlobalKey aboutKey;
+  final GlobalKey skillsKey;
+  final GlobalKey projectsKey;
+  final GlobalKey contactKey;
+
+  const HeaderWidget({
+    super.key,
+    required this.scrollController,
+    required this.aboutKey,
+    required this.skillsKey,
+    required this.projectsKey,
+    required this.contactKey,
+  });
 
   void _downloadResume() async {
-    const url = Role.resumeUrl;
+    const url = 'https://example.com/resume'; // Replace with actual URL
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -32,17 +42,21 @@ class HeaderWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           RichText(
-              text: TextSpan(
-                  text: "Anish ",
-                  style: themedata.textTheme.titleLarge,
-                  children: [
+            text: TextSpan(
+              text: "Anish ",
+              style: themedata.textTheme.titleLarge,
+              children: [
                 TextSpan(
-                    text: "Sherigar",
-                    style: GoogleFonts.amaranth(
-                        fontSize: 34,
-                        color: WebColor.btnColor,
-                        fontWeight: FontWeight.w700))
-              ])),
+                  text: "Sherigar",
+                  style: GoogleFonts.amaranth(
+                    fontSize: 34,
+                    color: WebColor.btnColor,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+            ),
+          ),
           SectionContainer(
             width: size.width / 2,
             color: WebColor.primaryColor,
@@ -51,49 +65,47 @@ class HeaderWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: () {
+                  TextButton(
+                    onPressed: () {
+                      _scrollToSection(aboutKey);
                     },
                     child: Text('About', style: themedata.textTheme.titleMedium),
                   ),
                   const SpacerWidthWidget(),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigate to Skills section
+                  TextButton(
+                    onPressed: () {
+                      _scrollToSection(skillsKey);
                     },
-                    child:
-                        Text('Skills', style: themedata.textTheme.titleMedium),
+                    child: Text('Skills', style: themedata.textTheme.titleMedium),
                   ),
                   const SpacerWidthWidget(),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigate to Projects section
+                  TextButton(
+                    onPressed: () {
+                      _scrollToSection(projectsKey);
                     },
-                    child:
-                        Text('Projects', style: themedata.textTheme.titleMedium),
+                    child: Text('Projects', style: themedata.textTheme.titleMedium),
                   ),
                   const SpacerWidthWidget(),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigate to Contact section
+                  TextButton(
+                    onPressed: () {
+                      _scrollToSection(contactKey);
                     },
-                    child:
-                        Text('Contact', style: themedata.textTheme.titleMedium),
+                    child: Text('Contact', style: themedata.textTheme.titleMedium),
                   ),
                   const SpacerWidthWidget(),
-                  GestureDetector(
-                    onTap: _downloadResume,
+                  TextButton(
+                    onPressed: _downloadResume,
                     child: Container(
-                        width: size.width * 0.07,
-                        height: size.width * 0.03,
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: WebColor.btnColor,
-                        ),
-                        child: Text('Resume',
-                            style: themedata.textTheme.titleMedium)),
+                      width: size.width * 0.07,
+                      height: size.width * 0.03,
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(5.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: WebColor.btnColor,
+                      ),
+                      child: Text('Resume', style: themedata.textTheme.titleMedium),
+                    ),
                   ),
                 ],
               ),
@@ -102,5 +114,14 @@ class HeaderWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _scrollToSection(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(context,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut);
+    }
   }
 }

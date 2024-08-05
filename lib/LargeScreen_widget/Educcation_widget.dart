@@ -12,25 +12,25 @@ class EduccationWidget extends StatelessWidget {
 
   final List<Map<String, String>> educationDetails = const [
     {
-      'institution': 'T.A.PAI English Medium High School, Udupi.',
+      'institution': 'T.A.PAI English Medium High School,Udupi.',
       'degree': 'SSLC',
       'score': 'Score - 92.64%',
       'duration': 'June 2015 - April 2018'
     },
     {
-      'institution': 'Mahatma Gandhi Memorial College, Udupi.',
+      'institution': 'Mahatma Gandhi Memorial College,Udupi.',
       'degree': 'PCMCs',
       'score': 'Score - 89%',
       'duration': 'June 2018 - March 2020'
     },
     {
-      'institution': 'Mahatma Gandhi Memorial College, Udupi.',
+      'institution': 'Mahatma Gandhi Memorial College,Udupi.',
       'degree': 'Bachelor of Computer Application',
       'score': 'CGPA - 9.3',
-      'duration': 'August 2020 - June 2023'
+      'duration': 'August 2020 - July 2023'
     },
     {
-      'institution': 'Manipal Institute of Technology, Manipal, Udupi',
+      'institution': 'Manipal Institute of Technology,Udupi',
       'degree': 'Master of Computer Application',
       'score': 'CGPA - 7.56',
       'duration': 'August 2023 - Present'

@@ -22,7 +22,7 @@ class AboutWidget extends StatelessWidget {
           children: [
             Text("About",style: themedata.textTheme.bodyLarge,),
             const SpacerHeightWidget(height: 20,),
-            Text(aboutMe,style:themedata.textTheme.bodyMedium,),
+            Text(aboutMe1,style:themedata.textTheme.bodyMedium,),
           ],
         )
     );

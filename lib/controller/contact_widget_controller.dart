@@ -1,14 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ContactController extends GetxController {
-  var nameController = TextEditingController();
-  var emailController = TextEditingController();
-  var messageController = TextEditingController();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final messageController = TextEditingController();
+
+  final DatabaseReference databaseReference = FirebaseDatabase.instance.ref('email');
 
   var nameValidationError = ''.obs;
   var emailValidationError = ''.obs;
   var messageValidationError = ''.obs;
+  var dateSent = ''.obs;
 
   String validateName(String value) {
     if (value.isEmpty) {
@@ -52,16 +57,40 @@ class ContactController extends GetxController {
     return nameValidationError.value.isEmpty && emailValidationError.value.isEmpty && messageValidationError.value.isEmpty;
   }
 
-  void sendMessage() {
+  void sendMessage() async {
     onNameChanged(nameController.text);
     onEmailChanged(emailController.text);
     onMessageChanged(messageController.text);
 
     if (isFormValid()) {
-      // Implement send action
-      Get.snackbar('Success', 'Message sent successfully');
+      try {
+        dateSent.value = DateTime.now().toString();
+        await databaseReference.push().set({
+          'name': nameController.text,
+          'email': emailController.text,
+          'message': messageController.text,
+          'date': dateSent.value,
+        });
+        Get.snackbar('Success', 'Message sent successfully');
+        nameController.clear();
+        emailController.clear();
+        messageController.clear();
+        nameValidationError.value = '';
+        emailValidationError.value = '';
+        messageValidationError.value = '';
+      } catch (e) {
+        Get.snackbar('Error', 'Failed to send message: $e');
+      }
     } else {
       Get.snackbar('Error', 'Please correct the errors in the form');
     }
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    messageController.dispose();
+    super.dispose();
   }
 }

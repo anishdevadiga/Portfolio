@@ -8,3 +8,4 @@ const professionalExp1="Software Engineer Intern \nGanglia Technologies Private 
 const profTitle="Professional Experience";
 const edu="Educational Information";
 const skilltext="Skill";
+const aboutMe1 = "I am Anish Sherigar, a Master of Computer Application student at Manipal Institute of Technology. I harness my technical expertise and passion for innovative technologies to App development and Data Analytics. Currently, I am focused on Flutter and UI/UX projects, while also improving my skills in Data Science. My commitment to these fields highlights me as a forward-thinking and innovative professional in the tech industry.";

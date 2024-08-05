@@ -63,35 +63,32 @@ class _ContactWidgetState extends State<ContactWidget> {
                               children: [
                                 Text("Name", style: themedata.textTheme.titleMedium),
                                 const SizedBox(height: 10),
-                                Container(
-                                  height: 50,
-                                  width: widget.size.width * 0.7,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: Colors.white, // Border color
-                                      width: 2.0, // Border width
+                                Obx(() => TextField(
+                                  controller: _contactController.nameController,
+                                  onChanged: _contactController.onNameChanged,
+                                  textAlign: TextAlign.start,
+                                  style: GoogleFonts.amaranth(fontSize: 22),
+                                  decoration: InputDecoration(
+                                    border: const OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.white, // Border color
+                                        width: 2.0, // Border width
+                                      ),
                                     ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 10),
-                                    child: Center(
-                                      child: Obx(() => TextField(
-                                        controller: _contactController.nameController,
-                                        onChanged: _contactController.onNameChanged,
-                                        textAlign: TextAlign.start,
-                                        style: GoogleFonts.amaranth(fontSize: 22),
-                                        decoration: InputDecoration(
-                                          hintText: 'Enter your name',
-                                          hintStyle: GoogleFonts.amaranth(
-                                              fontSize: 18, color: Colors.white70),
-                                          border: InputBorder.none, // Remove default border
-                                          errorText: _contactController.nameValidationError.value.isEmpty ? null : _contactController.nameValidationError.value,
-                                        ),
-                                      )),
+                                    enabledBorder: const OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                                      borderSide: BorderSide(
+                                        color: Colors.white, // Border color when enabled
+                                        width: 2.0, // Border width
+                                      ),
                                     ),
+                                    hintText: 'Enter your Name',
+                                    hintStyle: GoogleFonts.amaranth(
+                                        fontSize: 18, color: Colors.white70),
+                                    errorText: _contactController.nameValidationError.value.isEmpty ? null : _contactController.emailValidationError.value,
                                   ),
-                                ),
+                                )),
                               ],
                             ),
                             const SpacerHeightWidget(height: 20),
@@ -121,7 +118,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                         width: 2.0, // Border width
                                       ),
                                     ),
-                                    hintText: 'Enter your email',
+                                    hintText: 'Enter your Email',
                                     hintStyle: GoogleFonts.amaranth(
                                         fontSize: 18, color: Colors.white70),
                                     errorText: _contactController.emailValidationError.value.isEmpty ? null : _contactController.emailValidationError.value,

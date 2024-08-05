@@ -1,120 +1,172 @@
-import 'package:anishportfoilio/LargeScreen_widget/projectDetailScreen.dart';
 import 'package:anishportfoilio/core/colors.dart';
-import 'package:anishportfoilio/widgets/custom_section.dart';
+import 'package:anishportfoilio/core/textstyle.dart';
+import 'package:anishportfoilio/widgets/spacer_height.dart';
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart'; // Make sure to add url_launcher to your pubspec.yaml
 
-class Projectswidget extends StatelessWidget {
-  const Projectswidget({
-    super.key,
-    required this.size,
-    required this.themedata,
-  });
+import '../widgets/custom_section.dart';
 
+class ProjectsWidget extends StatelessWidget {
+  const ProjectsWidget({super.key, required this.size, required this.themedata});
   final Size size;
   final ThemeData themedata;
 
   @override
   Widget build(BuildContext context) {
     final List<Map<String, String>> projects = [
-      {'name': 'Project 1', 'image': 'assets/images/c++.png'},
-      {'name': 'Project 2', 'image': 'assets/images/dart.png'},
-      {'name': 'Project 2', 'image': 'assets/images/dart.png'},
-      {'name': 'Project 1', 'image': 'assets/images/c++.png'},
-      {'name': 'Project 2', 'image': 'assets/images/dart.png'},
-      {'name': 'Project 2', 'image': 'assets/images/dart.png'},
-      // Add more projects here
+      {
+        'name': 'Explore Udupi User Interface',
+        'description': 'A comprehensive mobile application offering insights and directions about the city of Udupi, Karnataka, India. Serves as a resource for tourists and visitors.',
+        'github': 'https://github.com/anishdevadiga/Explore-Udupi-user'
+      },
+      {
+        'name': 'Flutter Portfolio Website',
+        'description': 'A Flutter-based portfolio website showcasing a range of projects and skills with a modern design. Integrated with Firebase for real-time user message management.',
+        'github': 'https://github.com/anishdevadiga/Portfolio'
+      },
+      {
+        'name': 'Flutter Calculator App',
+        'description': 'A simple Flutter-based calculator app supporting basic arithmetic operations, with functionalities to clear all entries and delete the last character.',
+        'github': 'https://github.com/anishdevadiga/Flutter-Calculator-App'
+      },
+      {
+        'name': 'Explore Udupi Admin',
+        'description': 'An app for backend management of the Explore Udupi platform, allowing administrators to manage content, user data, and system settings efficiently.',
+        'github': 'https://github.com/anishdevadiga/explore-udupi-admin'
+      },
+      {
+        'name': 'Flutter Portfolio BackEnd App',
+        'description': 'A Flutter app for retrieving and displaying messages from a portfolio website, utilizing Firebase for real-time data synchronization.',
+        'github': 'https://github.com/anishdevadiga/portfolio_app'
+      },
+
+      {
+        'name': 'Java Date Finder Application',
+        'description': 'A Java Swing application designed to determine the day of the week based on user-provided date, month, and year.',
+        'github':'https://github.com/anishdevadiga/Java_GUI_Swing_DAY-FINDER'
+      },
     ];
 
-    // Create a ScrollController
-    final ScrollController _scrollController = ScrollController();
-
     return SectionContainer(
-      width: double.infinity,
+      width: size.width,
+      color: WebColor.primaryColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0),
-            child: Text('Projects', style: themedata.textTheme.bodyLarge),
-          ),
-          SizedBox(
-            height: size.height * 0.5, // Adjust the height as needed
-            child: MouseRegion(
-              onEnter: (_) => html.document.body!.style.cursor = 'pointer',
-              onExit: (_) => html.document.body!.style.cursor = 'default',
-              child: ScrollbarTheme(
-                data: ScrollbarThemeData(
-                  thumbColor: MaterialStateProperty.all(Colors.white60), // Thumb color
-                  trackColor: MaterialStateProperty.all(Colors.grey), // Track color
-                ),
-                child: Scrollbar(
-                  controller: _scrollController, // Attach ScrollController here
-                  thumbVisibility: true,
-                  child: SingleChildScrollView(
-                    controller: _scrollController, // Attach ScrollController here
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: List.generate(
-                        projects.length,
-                            (index) => Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ProjectDetailScreen(
-                                    projectName: projects[index]['name']!,
-                                    projectImage: projects[index]['image']!,
-                                    themedata: themedata,
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Card(
-                              elevation: 8.0,
-                              color: WebColor.primaryColor,
-                              child: Container(
-                                width: size.width * 0.2, // Adjust width as needed
-                                height: size.height * 0.4, // Adjust height as needed
-                                padding: const EdgeInsets.all(20),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+          Text('Projects', style: themedata.textTheme.bodyLarge),
+          const SpacerHeightWidget(height: 20),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: List.generate((projects.length + 1) ~/ 2, (index) {
+                    final project = projects[index];
+                    return FractionallySizedBox(
+                      widthFactor: 1.0,
+                      alignment: Alignment.centerLeft,
+                      child: SizedBox(
+                        height: 150,
+                        child: Card(
+                          elevation: 8.0,
+                          color: WebColor.primaryColor,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
                                   children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0), // Optional: for rounded corners
-                                      child: Image.asset(
-                                        projects[index]['image']!,
-                                        fit: BoxFit.cover,
-                                        width: size.width * 0.18, // Adjust width for rectangle shape
-                                        height: size.height * 0.25, // Adjust height for rectangle shape
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Center(
-                                        child: Text(
-                                          projects[index]['name']!,
-                                          style: themedata.textTheme.bodyMedium,
-                                        ),
-                                      ),
-                                    ),
+                                    const Icon(Icons.folder, size: 30, color: WebColor.btnColor),
+                                    const SizedBox(width: 10),
+                                    Text(project['name']!, style: GoogleFonts.amaranth(fontSize: 20, color: Colors.white)),
                                   ],
                                 ),
+                                const SizedBox(height: 10),
+                                Text(project['description']!, style: GoogleFonts.amaranth(fontSize: 16, color: Colors.white)),
+                                TextButton(
+                                  onPressed: () {
+                                    final url = project['github']!;
+                                    launchUrl(url);
+                                  },
+                                  child: Text('Click here to go to GitHub', style: GoogleFonts.amaranth(fontSize: 13, color: Colors.blue)),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: List.generate((projects.length + 1) ~/ 2, (index) {
+                    final project = projects[index + (projects.length + 1) ~/ 2];
+                    return FractionallySizedBox(
+                      widthFactor: 1.0,
+                      alignment: Alignment.centerLeft,
+                      child: SizedBox(
+                        height: 150,
+                        child: Card(
+                          elevation: 8.0,
+                          color: WebColor.primaryColor,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      const Icon(Icons.folder, size: 30, color: WebColor.btnColor),
+                                      const SizedBox(width: 10),
+                                      Text(project['name']!, style: GoogleFonts.amaranth(fontSize: 20, color: Colors.white)),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Text(project['description']!, style: GoogleFonts.amaranth(fontSize: 16, color: Colors.white)),
+                                  TextButton(
+                                    onPressed: () {
+                                      final url = project['github']!;
+                                      launchUrl(url);
+                                    },
+                                    child: Text('Click here to go to GitHub', style: GoogleFonts.amaranth(fontSize: 13, color: Colors.blue)),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
                         ),
-                      ).toList(),
-                    ),
-                  ),
+                      ),
+                    );
+                  }),
                 ),
               ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton(
+              onPressed: () {
+                // Navigate to a link when "See more" is clicked
+                const url = 'https://github.com/anishdevadiga?tab=repositories'; // Replace with the desired URL
+                launchUrl(url);
+              },
+              child: Text("See more", style: GoogleFonts.amaranth(fontSize: 16, color: Colors.blue)),
             ),
           ),
         ],
       ),
     );
+  }
+
+  void launchUrl(String url) {
+    // Implement URL launcher
+    // Example using url_launcher package
+    launch(url);
   }
 }
