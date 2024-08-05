@@ -23,7 +23,7 @@ class HeaderWidget extends StatelessWidget {
   });
 
   void _downloadResume() async {
-    const url = 'https://drive.google.com/file/d/1Aozw8RdenGDuH8vELOoeX_YtbAz2jhw_/view?usp=sharing'; // Replace with actual URL
+    const url = 'https://drive.google.com/file/d/1nUOwqark-iAqV4dvge_HWUHodJIq41or/view?usp=sharing'; // Replace with actual URL
     if (await canLaunch(url)) {
       await launch(url);
     } else {

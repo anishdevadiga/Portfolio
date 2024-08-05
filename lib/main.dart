@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:anishportfoilio/screens/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'core/colors.dart';
@@ -17,7 +18,10 @@ Future<void> main()  async {
          appId: "1:282200852542:web:b6e67b8a11b3df1b0c696f",
          measurementId: "G-B7RDYXBS10",
          databaseURL:"https://portfoliobackend-9477e-default-rtdb.firebaseio.com"));
-  runApp( MyApp());
+  runApp( GetMaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

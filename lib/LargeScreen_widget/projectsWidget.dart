@@ -43,7 +43,7 @@ class ProjectsWidget extends StatelessWidget {
 
       {
         'name': 'Java Date Finder Application',
-        'description': 'A Java Swing application designed to determine the day of the week based on user-provided date, month, and year.',
+        'description': 'A Java Swing application designed to determine the day of the week based on user-provided date, month, and year.\n',
         'github':'https://github.com/anishdevadiga/Java_GUI_Swing_DAY-FINDER'
       },
     ];
