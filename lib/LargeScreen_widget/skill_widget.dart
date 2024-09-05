@@ -26,7 +26,6 @@ class SkillWidget extends StatelessWidget {
       'assets/images/html.png',
       'assets/images/CSS.png',
       'assets/images/js.png',
-      'assets/images/PHP.png',
       'assets/images/SQL.png',
       'assets/images/firebase.png',
       'assets/images/linux.png',
